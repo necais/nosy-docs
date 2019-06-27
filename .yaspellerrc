@@ -1,0 +1,23 @@
+{
+  "format": "markdown",
+  "lang": "en",
+  "dictionary": [
+    "NoSy",
+    "img",
+    "Keycloak",
+    "IAM",
+    "openid",
+    "zookeeper",
+    "CC",
+    "base64",
+    "linkTitle",
+    "npm",
+  ],
+  "fileExtensions": [
+    ".md"
+  ],
+  "ignoreText": [
+    ["^`{3}([\\S]+)?([\\s\\S]+)`{3}", "gm"]
+  ],
+  "ignoreUrls": true
+}

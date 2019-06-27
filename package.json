@@ -1,0 +1,34 @@
+{
+  "name": "nosy-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "hugo server",
+    "build": "rimraf public & hugo",
+    "spellcheck": "yaspeller-ci content"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notification-system/notification-system.github.io.git"
+  },
+  "keywords": [
+    "notification-system",
+    "documentation",
+    "nosy",
+    "docs",
+    "nosy-docs"
+  ],
+  "author": "Samuel Lundin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notification-system/notification-system.github.io/issues"
+  },
+  "homepage": "https://github.com/notification-system/notification-system.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "postcss-cli": "^6.1.2",
+    "rimraf": "^2.6.3",
+    "yaspeller-ci": "^1.0.1"
+  }
+}
