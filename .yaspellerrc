@@ -12,6 +12,7 @@
     "base64",
     "linkTitle",
     "npm",
+    "yaspellerrc"
   ],
   "fileExtensions": [
     ".md"
