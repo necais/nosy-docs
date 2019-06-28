@@ -1,0 +1,9 @@
+# Ignore hugo build folders
+public
+
+# Ignore node_modules
+node_modules
+
+# Ignore dockerfile
+Dockerfile
+.dockerignore
