@@ -2,23 +2,23 @@
 
 set -e
 
-# Change to build directory
-cd public
+echo $GITHUB_AUTH_SECRET > ~/.git-credentials && chmod 0600 ~/.git-credentials
+git config --global credential.helper store
+git config --global user.email "nosy-ci@users.noreply.github.com"
+git config --global user.name "Nosy-Docs CI"
+git config --global push.default simple
 
-# Checkout deployment branch
-git checkout -B deployment
+rm -rf deployment
 
-# Add the changed files
+git clone -b master https://github.com/notification-system/nosy-docs deployment
+git submodule update --init
+rsync -av --delete --exclude ".git" public/ deployment
+cd deployment
 git add -A
+# we need the || true, as sometimes you do not have any content changes
+# and git woundn't commit and you don't want to break the CI because of that
+git commit -m "rebuilding site on `date`, commit ${TRAVIS_COMMIT} and job ${TRAVIS_JOB_NUMBER}" || true
+git push
 
-# Commit the changed files
-git commit -m "Rebuilding site 'date'"
-
-# Push changes to deployment branch
-git push -u origin HEAD
-
-# Create pull request: deployment -> master
-hub pull-request -m "Rebuilding site 'date'"
-
-# Change back to root directory
 cd ..
+rm -rf deployment
