@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/notification-system/nosy-docs.svg?branch=master)](https://travis-ci.com/notification-system/nosy-docs)
+
 ### **This repository contains the source files needed for building the documentation site for Nosy.**
 
 Documentation repository:  
