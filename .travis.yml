@@ -1,7 +1,11 @@
 ---
+before_install:
+  - sudo apt-getupdate
+
 install:
-  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_extended_0.55.6_Linux-64bit.deb
-  - sudo dpkg -i /tmp/hugo.deb
+  - sudo apt-get install hugo
+  - sudo apt-get install nodejs
+  - npm i -g autoprefixer postcss-cli
 
 script:
   - hugo version
