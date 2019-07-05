@@ -7,9 +7,14 @@ Documentation site:
 https://docs.nosy.tech/
 
 ## Get Started
----
 
-### Prerequisites
+
+There are two ways to run the documentation.  
+Either run it locally or with docker.
+
+### Local setup
+
+#### Prerequisites
 
 1. **Node.js (npm)**  
    Used for installing dependencies and running scripts.  
@@ -19,7 +24,7 @@ https://docs.nosy.tech/
    Used for running and building the documentation.  
    https://gohugo.io/
 
-### Instructions
+#### Instructions
 
 1. Make a fork of the repository.
    
@@ -42,11 +47,33 @@ https://docs.nosy.tech/
 8. Run command to build documentation:  
    `npm run build`
 
-9. Run command to deploy changes:  
-   `npm run deploy`
+### Docker
+
+#### Prerequisites
+
+1. **Docker**  
+   Used for running and building the documentation.  
+   https://www.docker.com/get-started
+
+
+#### Instructions
+
+1. Make a fork of the repository.
+   
+2. Clone the fork.
+   
+3. Run command to clone submodules:  
+   `git submodule update --init --recursive`
+
+4. Make changes...
+
+5. Run command for spell check:  
+   `docker build -t spellchecker:latest -f Dockerfile-spellcheck .`
+
+6. Run command to build documentation:  
+   `docker build .`
 
 ## Scripts
----
 
 ### Install
 
@@ -85,7 +112,9 @@ Hub is an extension to command-line git that enables pull-requests from the comm
 To read more about hub and how to install go to:  
 https://hub.github.com/
 
-`npm run deploy` -> `deploy.sh`
+`npm run deploy`  
+or  
+`deploy.sh`
 
 This will push the changed files to deployment branch.  
 Then make a pull-request from deployment -> master.  
