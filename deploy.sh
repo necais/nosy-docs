@@ -4,7 +4,7 @@ set -e
 
 echo $GITHUB_AUTH_SECRET > ~/.git-credentials && chmod 0600 ~/.git-credentials
 git config --global credential.helper store
-git config --global user.email "<GITHUB LOGIN OF BOT>@users.noreply.github.com"
+git config --global user.email "nosy-ci@users.noreply.github.com"
 git config --global user.name "Nosy-Docs CI"
 git config --global push.default simple
 
