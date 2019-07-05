@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "hugo server",
-    "build": "rimraf public & hugo",
-    "spellcheck": "yaspeller-ci content"
+    "build": "hugo -t docsy",
+    "deploy": "./deploy.sh",
+    "spellcheck": "yaspeller-ci content README.md",
+    "start": "hugo server"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,6 @@
   "devDependencies": {
     "autoprefixer": "^9.6.0",
     "postcss-cli": "^6.1.2",
-    "rimraf": "^2.6.3",
     "yaspeller-ci": "^1.0.1"
   }
 }
